@@ -1,3 +1,3 @@
-export {Notification} from './Notification';
-export {Navbar} from './Navbar';
-export {Footer} from './Footer';
+export {Notification} from './notification/Notification';
+export {Navbar} from './navbar/Navbar';
+export {Footer} from './footer/Footer';
