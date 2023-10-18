@@ -2,6 +2,9 @@
     --white: #ffffff;
     --red: #ff2121;
     --orange: #fdba74;
+    --yellow: #faf089;
+
+    --countdown-color: var(--yellow);
 
     --font-family: "Inter", sans-serif;
 

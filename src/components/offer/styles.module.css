@@ -1,0 +1,67 @@
+.wrapper {
+    display: flex; 
+    flex-direction: column; 
+    height: 100vh; 
+    background-color: #000000;     
+}
+
+.text {
+    display: flex; 
+    padding: 1.5rem; 
+    flex-direction: column; 
+    flex: 1 1 0%; 
+    gap: 2rem; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    color: var(--white);
+}
+
+.title{
+    font-size: 3rem;
+    line-height: 1; 
+    font-weight: 700; 
+    color: var(--white); 
+}
+
+.button {
+    padding: 12px 20px;
+    border:none;
+    border-radius: 2px; 
+    font-weight: var(--font-weight-semi-bold);
+    color: var(--white); 
+    background-color: var(--red); 
+}
+
+.imageWrapper {
+    display: flex;
+    flex: 1 1 0%; 
+    position: relative; 
+    width: 100%; 
+}
+
+.image {
+    object-fit: contain;
+}
+
+@media (min-width: 768px) { 
+    .wrapper {
+        flex-direction: row; 
+        justify-content: space-between; 
+        background: url('/images/offerBg.png');
+        height: 70vh;
+    }
+
+    .text{
+        color: var(--white)
+    }
+
+    .title {
+        color: var(--white);
+    }
+
+    .imageWrapper {
+        height: 100%;
+    }
+
+}
