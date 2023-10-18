@@ -7,3 +7,4 @@ export {Slider} from './slider/Slider';
 export {Featured} from './featured/Featured';
 export {Offer} from './offer/Offer';
 export {CountDown} from './countdown/Countdown';
+export {Price} from './price/Price';
