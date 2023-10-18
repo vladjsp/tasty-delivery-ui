@@ -14,7 +14,7 @@ const Navbar = () => {
       {/* LEFT DESCTOP LINKS */}
       <div className={styles.desktopMenu}>
         <Link href='/'>Homepage</Link>
-        <Link href='/'>Menu</Link>
+        <Link href='/menu'>Menu</Link>
         <Link href='/'>Contact</Link>
       </div>
 

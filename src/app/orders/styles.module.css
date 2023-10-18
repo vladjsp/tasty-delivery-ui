@@ -1,0 +1,30 @@
+.container {
+    min-height: var(--content-height);
+    padding: 16px;
+}
+
+.table {
+    width: 100%; 
+    border-spacing: 12px 12px;
+    border-collapse: separate; 
+}
+
+.optionalColumn {
+    display: none;
+}
+
+.orderRow {
+    font-size: var(--font-size-small);
+    background-color: #FEF2F2; 
+}
+
+.cell {
+    padding: 16px 4px;
+}
+
+@media (min-width: 768px) {
+    
+    .optionalColumn{
+        display: block;
+    }
+}
