@@ -1,0 +1,5 @@
+.countdown {
+    color: var(--countdown-color);
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-semi-bold);
+}

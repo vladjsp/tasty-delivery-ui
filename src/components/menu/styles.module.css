@@ -1,0 +1,21 @@
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    position: absolute;
+    left: 0;
+    top: calc(var(--navbar-height) + var(--notification-height));
+    width: 100%;
+    height: calc(100vh - var(--navbar-height) - var(--notification-height));
+    font-size: var(--font-size-large);
+    background-color: var(--red);
+    z-index: 10;
+}
+
+.links a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+}

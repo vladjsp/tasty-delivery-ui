@@ -1,0 +1,25 @@
+:root {
+    --white: #ffffff;
+    --red: #ff2121;
+    --orange: #fdba74;
+    --yellow: #faf089;
+
+    --countdown-color: var(--yellow);
+
+    --font-family: "Inter", sans-serif;
+
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 20px;
+    --font-size-title: 44px;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+
+    --notification-height: 48px;
+    --navbar-height: 48px;
+    --footer-height: 48px;
+
+}
