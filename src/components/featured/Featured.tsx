@@ -1,8 +1,21 @@
 import Image from 'next/image'
+import { TProduct } from '@/types/types';
 import styles from './styles.module.css'
-import { featuredProducts } from '@/data'
 
-const Featured = () => {
+const getData = async () => {
+  const res = await fetch('http://localhost:3000/api/products', {
+    cache: 'no-store',
+  });
+
+  if(!res.ok){
+    throw new Error('Failed!')
+  }
+  return res.json();
+}
+
+const Featured = async () => {
+  const featuredProducts: TProduct[] = await getData();
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
