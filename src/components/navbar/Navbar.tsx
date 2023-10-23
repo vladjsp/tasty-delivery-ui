@@ -1,26 +1,22 @@
 import React from 'react'
-import { CartIcon, Menu } from '../components';
 import Link from 'next/link';
-import styles from './styles.module.css'
-import Image from 'next/image';
+import { CartIcon, Menu, UserLinks } from '../components';
+import { AppRoute } from '@/enums/enums';
+import styles from './styles.module.css';
 
 const Navbar = () => {
-
-  // TODO: repace with real state
-  const user = false;
-
   return (
     <div className={styles.wrapper}>
       {/* LEFT DESCTOP LINKS */}
       <div className={styles.desktopMenu}>
-        <Link href='/'>Homepage</Link>
-        <Link href='/menu'>Menu</Link>
-        <Link href='/'>Contact</Link>
+        <Link href={AppRoute.ROOT}>Homepage</Link>
+        <Link href={AppRoute.MENU}>Menu</Link>
+        <Link href={AppRoute.ROOT}>Contact</Link>
       </div>
 
       {/* LOGO */}
       <div className={styles.logo}>
-        <Link href='/'>
+        <Link href={AppRoute.ROOT}>
           Maximo
         </Link>
       </div>
@@ -30,8 +26,7 @@ const Navbar = () => {
       </div>
       {/* RIGHT DESKTOP LINKS */}
       <div className={styles.desktopMenu}>
-        { !user ? <Link href='/login'>Login</Link> :
-        <Link href='/orders'>Orders</Link> }
+        <UserLinks />
         <CartIcon />
       </div>
     </div>
