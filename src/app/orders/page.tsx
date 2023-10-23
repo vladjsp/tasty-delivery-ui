@@ -1,6 +1,23 @@
+'use client'
+
+import { TOrder } from '@/types/types';
 import styles from './styles.module.css'
 
+const getData = async () => {
+  const res = await fetch('http://localhost:3000/api/orders', {
+    cache: 'no-store',
+  });
+
+  if(!res.ok){
+    throw new Error('Failed!')
+  }
+  return res.json();
+}
+
 const OrdersPage = () => {
+
+  const orders:TOrder[] = [];
+
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -14,27 +31,15 @@ const OrdersPage = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className={styles.orderRow}>
-            <td>1237861238721</td>
-            <td className={styles.cell}>19.07.2023</td>
-            <td className={styles.cell}>89.90</td>
-            <td>Big Burger Menu (2), Veggie Pizza (2), Coca Cola 1L (2)</td>
-            <td className={styles.cell}>On the way (approx. 10min)...</td>
-          </tr>
-          <tr className={styles.orderRow}>
-            <td>1237861238721</td>
-            <td className={styles.cell}>19.07.2023</td>
-            <td className={styles.cell}>89.90</td>
-            <td>Big Burger Menu (2), Veggie Pizza (2), Coca Cola 1L (2)</td>
-            <td className={styles.cell}>On the way (approx. 10min)...</td>
-          </tr>
-          <tr className={styles.orderRow}>
-            <td>1237861238721</td>
-            <td className={styles.cell}>19.07.2023</td>
-            <td className={styles.cell}>89.90</td>
-            <td>Big Burger Menu (2), Veggie Pizza (2), Coca Cola 1L (2)</td>
-            <td className={styles.cell}>On the way (approx. 10min)...</td>
-          </tr>
+          {orders.map((item) => (
+            <tr key={item.id} className={styles.orderRow}>
+              <td>{item.id}</td>
+              <td className={styles.cell}>{item.createdAt.toString().slice(0,10)}</td>
+              <td className={styles.cell}>{item.price}</td>
+              <td>{item.products[0].title}</td>
+              <td className={styles.cell}>{item.status}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
   </div>
