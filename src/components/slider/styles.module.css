@@ -34,6 +34,7 @@
     background-color: var(--red);
     font-weight: var(--font-weight-semi-bold);
     color: var(--white);
+    cursor: pointer;
 }
 
 .imageContainer {

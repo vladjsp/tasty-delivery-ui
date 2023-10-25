@@ -60,6 +60,7 @@
     font-weight: var(--font-weight-semi-bold);
     background-color: var(--red);
     color: var(--white);
+    cursor: pointer;
 }
 
 .description {
