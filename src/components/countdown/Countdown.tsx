@@ -1,15 +1,12 @@
-'use client'
+'use client';
 
-import Countdown from 'react-countdown'
-import styles from './styles.module.css'
+import Countdown from 'react-countdown';
+import styles from './styles.module.css';
 
-
-const endingDate = new Date('2023-10-31')
+const endingDate = new Date('2023-10-31');
 
 const CountDown = () => {
-  return (
-    <Countdown date={endingDate} className={styles.countdown} />
-  )
-}
+    return <Countdown date={endingDate} className={styles.countdown} />;
+};
 
-export {CountDown}
+export { CountDown };

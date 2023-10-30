@@ -1,8 +1,7 @@
 .wrapper {
-    display: flex; 
-    flex-direction: column; 
-    gap: 16px; 
-
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .price {
@@ -17,40 +16,40 @@
 }
 
 .optionBtn {
-    padding: 8px; 
+    padding: 8px;
     border: 1px solid var(--red);
-    border-radius: 2px; 
-    box-shadow: var(--red)
+    border-radius: 2px;
+    box-shadow: var(--red);
 }
 
 .orderInfo {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 4px 8px;
     border: 1px solid var(--red);
     border-radius: 2px;
 }
 
 .quantity {
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 100%; 
-    padding: 8px; 
+    width: 100%;
+    padding: 8px;
 }
 
 .quantityBtn {
-    display: flex; 
-    align-items: center; 
-    gap: 16px; 
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .addToCartBtn {
     min-width: 140px;
     padding: 8px 16px;
-    border:none;
-    border-radius: 2px; 
+    border: none;
+    border-radius: 2px;
     font-weight: var(--font-weight-semi-bold);
     background-color: var(--red);
     color: var(--white);

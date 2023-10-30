@@ -29,7 +29,7 @@
 
 .button {
     padding: 6px 12px;
-    border:none;
+    border: none;
     border-radius: 2px;
     background-color: var(--red);
     font-weight: var(--font-weight-semi-bold);

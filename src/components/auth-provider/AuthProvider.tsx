@@ -1,15 +1,13 @@
-'use client'
+'use client';
 
-import { SessionProvider } from 'next-auth/react'
+import { SessionProvider } from 'next-auth/react';
 
 type TProps = {
     children: React.ReactNode;
-}
+};
 
-const AuthProvider = ({children}:TProps) => {
-  return (
-    <SessionProvider>{children}</SessionProvider>
-  )
-}
+const AuthProvider = ({ children }: TProps) => {
+    return <SessionProvider>{children}</SessionProvider>;
+};
 
-export {AuthProvider}
+export { AuthProvider };
