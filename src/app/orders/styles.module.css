@@ -22,6 +22,27 @@
     padding: 16px 4px;
 }
 
+.statusInput {
+    padding: 8px;
+    border: none;
+    border-radius: 2px;
+}
+
+.form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.editIcon {
+    background-color: var(--red);
+    padding: 4px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
     .optionalColumn {
         display: block;

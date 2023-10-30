@@ -2,11 +2,13 @@
 
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { TOrder } from '@/types/types';
 import styles from './styles.module.css';
 import { AppRoute, AuthStatus } from '@/enums/enums';
+import Image from 'next/image';
+import React from 'react';
 
 const OrdersPage = () => {
     const { data: session, status } = useSession();
@@ -25,8 +27,33 @@ const OrdersPage = () => {
             ),
     });
 
-    if (isLoading || status === AuthStatus.LOADING) return 'Loading...';
+    const queryClient = useQueryClient();
 
+    const mutation = useMutation({
+        mutationFn: ({ id, status }: { id: string; status: string }) => {
+            return fetch(`${AppRoute.API_DOMAIN}${AppRoute.ORDERS}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(status),
+            });
+        },
+        onSuccess() {
+            queryClient.invalidateQueries({ queryKey: ['orders'] });
+        },
+    });
+
+    const handleUpdate = (e: React.FormEvent<HTMLFormElement>, id: string) => {
+        e.preventDefault();
+        const form = e.target as HTMLFormElement;
+        const input = form.elements[0] as HTMLInputElement;
+        const status = input.value;
+
+        mutation.mutate({ id, status });
+    };
+
+    if (isLoading || status === AuthStatus.LOADING) return 'Loading...';
     return (
         <div className={styles.container}>
             <table className={styles.table}>
@@ -48,7 +75,35 @@ const OrdersPage = () => {
                             </td>
                             <td className={styles.cell}>{item.price}</td>
                             <td>{item.products[0].title}</td>
-                            <td className={styles.cell}>{item.status}</td>
+                            {session?.user.isAdmin ? (
+                                <td className={styles.cell}>
+                                    <form
+                                        className={styles.form}
+                                        onSubmit={(e) =>
+                                            handleUpdate(e, item.id)
+                                        }
+                                    >
+                                        <input
+                                            type="text"
+                                            placeholder={item.status}
+                                            className={styles.statusInput}
+                                        />
+                                        <button
+                                            type="submit"
+                                            className={styles.editIcon}
+                                        >
+                                            <Image
+                                                src="/images/edit.png"
+                                                alt="edit"
+                                                width={20}
+                                                height={20}
+                                            />
+                                        </button>
+                                    </form>
+                                </td>
+                            ) : (
+                                <td className={styles.cell}>{item.status}</td>
+                            )}
                         </tr>
                     ))}
                 </tbody>
