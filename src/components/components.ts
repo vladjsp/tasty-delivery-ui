@@ -10,3 +10,4 @@ export { CountDown } from './countdown/Countdown';
 export { Price } from './price/Price';
 export { AuthProvider } from './auth-provider/AuthProvider';
 export { UserLinks } from './user-links/UserLinks';
+export { QueryProvider } from './query-provider/QueryProvider';
