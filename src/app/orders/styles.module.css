@@ -4,9 +4,9 @@
 }
 
 .table {
-    width: 100%; 
+    width: 100%;
     border-spacing: 12px 12px;
-    border-collapse: separate; 
+    border-collapse: separate;
 }
 
 .optionalColumn {
@@ -15,7 +15,7 @@
 
 .orderRow {
     font-size: var(--font-size-small);
-    background-color: #FEF2F2; 
+    background-color: #fef2f2;
 }
 
 .cell {
@@ -23,8 +23,7 @@
 }
 
 @media (min-width: 768px) {
-    
-    .optionalColumn{
+    .optionalColumn {
         display: block;
     }
 }

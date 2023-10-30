@@ -1,10 +1,10 @@
 .wrapper {
-    display: flex; 
-    padding: 1rem; 
-    flex-direction: column; 
-    justify-content: space-around; 
-    height: var(--content-height); 
-    color: var(--red); 
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: space-around;
+    height: var(--content-height);
+    color: var(--red);
 }
 
 .imageWrapper {
@@ -14,25 +14,25 @@
 }
 
 .info {
-    display: flex; 
-    flex-direction: column; 
-    gap: 16px; 
-    height: 50%; 
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 50%;
 }
 
 .title {
-    padding: 8px; 
+    padding: 8px;
     font-size: 16px;
-    line-height: 24px; 
-    text-transform: uppercase; 
+    line-height: 24px;
+    text-transform: uppercase;
     color: var(--red);
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .wrapper {
-        flex-direction: row; 
-        gap: 24px; 
-        align-items: center; 
+        flex-direction: row;
+        gap: 24px;
+        align-items: center;
     }
 
     .imageWrapper {
@@ -40,14 +40,14 @@
     }
 
     .info {
-        gap: 20px; 
-        justify-content: center; 
+        gap: 20px;
+        justify-content: center;
         height: 70%;
     }
 }
 
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) {
     .wrapper {
-        padding : 0 60px;
+        padding: 0 60px;
     }
 }
