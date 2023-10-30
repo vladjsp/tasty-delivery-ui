@@ -1,2 +1,2 @@
-export {authOptions} from './auth';
-export {prisma} from './connect';
+export { authOptions } from './auth';
+export { prisma } from './connect';

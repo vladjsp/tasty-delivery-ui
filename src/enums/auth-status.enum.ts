@@ -1,7 +1,7 @@
 const AuthStatus = {
     AUTHENTICATED: 'authenticated',
     UNAUTHENTICATED: 'unauthenticated',
-    LOADING: 'loading'
+    LOADING: 'loading',
 } as const;
 
-export {AuthStatus}
+export { AuthStatus };

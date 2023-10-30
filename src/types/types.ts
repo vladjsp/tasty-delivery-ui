@@ -8,13 +8,13 @@ export type TMenu = {
 }[];
 
 export type TProduct = {
-id: number;
-title: string;
-desc?: string;
-img?: string;
-price: number;
-options?: { title: string; additionalPrice: number }[];
-}; 
+    id: number;
+    title: string;
+    desc?: string;
+    img?: string;
+    price: number;
+    options?: { title: string; additionalPrice: number }[];
+};
 
 export type TCartItem = {
     id: string;
@@ -23,7 +23,7 @@ export type TCartItem = {
     price: number;
     optionTitle?: string;
     quantity: number;
-}; 
+};
 
 export type TOrder = {
     id: string;
