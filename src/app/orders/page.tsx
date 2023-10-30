@@ -1,21 +1,31 @@
 'use client';
 
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { useQuery } from '@tanstack/react-query';
+
 import { TOrder } from '@/types/types';
 import styles from './styles.module.css';
-
-const getData = async () => {
-    const res = await fetch('http://localhost:3000/api/orders', {
-        cache: 'no-store',
-    });
-
-    if (!res.ok) {
-        throw new Error('Failed!');
-    }
-    return res.json();
-};
+import { AppRoute, AuthStatus } from '@/enums/enums';
 
 const OrdersPage = () => {
-    const orders: TOrder[] = [];
+    const { data: session, status } = useSession();
+
+    const router = useRouter();
+
+    if (status === AuthStatus.UNAUTHENTICATED) {
+        router.push(AppRoute.ROOT);
+    }
+
+    const { isLoading, error, data } = useQuery({
+        queryKey: ['orders'],
+        queryFn: () =>
+            fetch(`${AppRoute.API_DOMAIN}${AppRoute.ORDERS}`).then((res) =>
+                res.json(),
+            ),
+    });
+
+    if (isLoading || status === AuthStatus.LOADING) return 'Loading...';
 
     return (
         <div className={styles.container}>
@@ -30,7 +40,7 @@ const OrdersPage = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {orders.map((item) => (
+                    {data.map((item: TOrder) => (
                         <tr key={item.id} className={styles.orderRow}>
                             <td>{item.id}</td>
                             <td className={styles.cell}>

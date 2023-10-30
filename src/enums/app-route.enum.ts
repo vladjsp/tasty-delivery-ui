@@ -1,4 +1,5 @@
 const AppRoute = {
+    API_DOMAIN: 'http://localhost:3000/api',
     ROOT: '/',
     MENU: '/menu',
     CART: '/cart',
