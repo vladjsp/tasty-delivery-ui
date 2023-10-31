@@ -7,6 +7,7 @@ const AppRoute = {
     ORDERS: '/orders',
     NOT_FOUND: '/not-found',
     SAME_PAGE: '#',
+    PRODUCTS: '/products',
 } as const;
 
 export { AppRoute };

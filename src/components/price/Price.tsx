@@ -18,31 +18,35 @@ const Price = ({ price, id, options }: Props) => {
     useEffect(() => {
         setTotal(
             quantity *
-                (options ? price + options[selected].additionalPrice : price),
+                (options?.length
+                    ? price + options[selected].additionalPrice
+                    : price),
         );
     }, [quantity, selected, options, price]);
 
     return (
         <div className={styles.wrapper}>
-            <h2 className={styles.price}>${total.toFixed(2)}</h2>
+            <h2 className={styles.price}>${total}</h2>
             {/* OPTIONS CONTAINER */}
             <div className={styles.options}>
-                {options?.map((option, index) => (
-                    <button
-                        key={option.title}
-                        className={styles.optionBtn}
-                        style={{
-                            background:
-                                selected === index
-                                    ? 'rgb(248 113 113)'
-                                    : '#ffffff',
-                            color: selected === index ? '#ffffff' : '#ff2121',
-                        }}
-                        onClick={() => setSelected(index)}
-                    >
-                        {option.title}
-                    </button>
-                ))}
+                {options?.length &&
+                    options?.map((option, index) => (
+                        <button
+                            key={option.title}
+                            className={styles.optionBtn}
+                            style={{
+                                background:
+                                    selected === index
+                                        ? 'rgb(248 113 113)'
+                                        : '#ffffff',
+                                color:
+                                    selected === index ? '#ffffff' : '#ff2121',
+                            }}
+                            onClick={() => setSelected(index)}
+                        >
+                            {option.title}
+                        </button>
+                    ))}
             </div>
             {/* QUANTITY AND ADD BUTTON CONTAINER */}
             <div className={styles.orderInfo}>
