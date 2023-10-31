@@ -38,11 +38,7 @@ const SingleProductPage = async ({ params }: { params: { id: string } }) => {
             <div className={styles.info}>
                 <h1 className={styles.title}>{singleProduct.title}</h1>
                 <p>{singleProduct.desc}</p>
-                <Price
-                    price={singleProduct.price}
-                    id={singleProduct.id}
-                    options={singleProduct.options}
-                />
+                <Price product={singleProduct} />
             </div>
         </div>
     );

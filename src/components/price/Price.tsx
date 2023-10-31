@@ -3,25 +3,18 @@
 import { useEffect, useState } from 'react';
 
 import styles from './styles.module.css';
+import { TProduct } from '@/types/types';
 
-type Props = {
-    price: number;
-    id: number;
-    options?: { title: string; additionalPrice: number }[];
-};
-
-const Price = ({ price, id, options }: Props) => {
+const Price = ({ product }: { product: TProduct }) => {
+    const { price, options } = product;
     const [total, setTotal] = useState(price);
     const [quantity, setQuantity] = useState(1);
     const [selected, setSelected] = useState(0);
 
     useEffect(() => {
-        setTotal(
-            quantity *
-                (options?.length
-                    ? price + options[selected].additionalPrice
-                    : price),
-        );
+        if (options?.length) {
+            setTotal(quantity * price + options[selected].additionalPrice);
+        }
     }, [quantity, selected, options, price]);
 
     return (
