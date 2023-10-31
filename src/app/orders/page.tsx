@@ -9,6 +9,7 @@ import styles from './styles.module.css';
 import { AppRoute, AuthStatus } from '@/enums/enums';
 import Image from 'next/image';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const OrdersPage = () => {
     const { data: session, status } = useSession();
@@ -51,6 +52,7 @@ const OrdersPage = () => {
         const status = input.value;
 
         mutation.mutate({ id, status });
+        toast.success('The order status has been updated!');
     };
 
     if (isLoading || status === AuthStatus.LOADING) return 'Loading...';
