@@ -12,7 +12,6 @@ const links = [
     { id: 111, title: 'Homepage', url: '/' },
     { id: 222, title: 'Menu', url: '/menu' },
     { id: 333, title: 'Working hours', url: '/' },
-    { id: 444, title: 'Contacts', url: '/' },
 ];
 
 const Menu = () => {

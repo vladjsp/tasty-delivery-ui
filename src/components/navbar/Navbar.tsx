@@ -11,7 +11,6 @@ const Navbar = () => {
             <div className={styles.desktopMenu}>
                 <Link href={AppRoute.ROOT}>Homepage</Link>
                 <Link href={AppRoute.MENU}>Menu</Link>
-                <Link href={AppRoute.ROOT}>Contact</Link>
             </div>
 
             {/* LOGO */}
